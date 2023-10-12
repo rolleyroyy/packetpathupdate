@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Packet Path Blog - NETWORKING</title><link href="/" rel="alternate"></link><link href="/feeds/networking.atom.xml" rel="self"></link><id>/</id><updated>2019-01-02T18:00:00-08:00</updated><entry><title>Steps to compile and run OpenWRT on Edge Router</title><link href="/steps-to-compile-and-run-openwrt-on-edge-router.html" rel="alternate"></link><published>2019-01-02T18:00:00-08:00</published><updated>2019-01-02T18:00:00-08:00</updated><author><name>Venkat Subbiah</name></author><id>tag:None,2019-01-02:/steps-to-compile-and-run-openwrt-on-edge-router.html</id><summary type="html">&lt;h3&gt;Open to access USB drive&lt;/h3&gt;
+&lt;p&gt;Need to open up the Edge Router to access the USB drive. It needs to be . Below is picture after opening it up. Be careful when unplugging the USB drive. Hold on to the USB connector, so that there is not much pull on the …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Open to access USB drive&lt;/h3&gt;
+&lt;p&gt;Need to open up the Edge Router to access the USB drive. It needs to be . Below is picture after opening it up. Be careful when unplugging the USB drive. Hold on to the USB connector, so that there is not much pull on the connector&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Photo" src="/edge_router.jpg"&gt;&lt;/p&gt;
+&lt;h3&gt;Get Source&lt;/h3&gt;
+&lt;p&gt;Clone using&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;git://git.openwrt.org/14.07/openwrt.git&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Build&lt;/h3&gt;
+&lt;p&gt;From the top dir run “make menuconfig and set target to be Octeon. Pictures showing top dir and Target selection below.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Photo" src="/dir_list.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Photo" src="/menu_config.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Partition&lt;/h3&gt;
+&lt;p&gt;The partition of the USB drive looked like below. I probably had partitioned this before. If it doesn’t look like below, you want to use fdisk to partition the USB drive.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Disk /dev/sdg: 3880 MB, 3880452096 bytes&lt;/span&gt;
+&lt;span class="err"&gt;120 heads, 62 sectors/track, 1018 cylinders, total 7579008 sectors&lt;/span&gt;
+&lt;span class="err"&gt;Units = sectors of 1 * 512 = 512 bytes&lt;/span&gt;
+&lt;span class="err"&gt;Sector size (logical/physical): 512 bytes / 512 bytes&lt;/span&gt;
+&lt;span class="err"&gt;Disk identifier: 0xe9ad0200&lt;/span&gt;
+&lt;span class="err"&gt;Device Boot Start End Blocks Id System &lt;/span&gt;
+&lt;span class="err"&gt;/dev/sdg1 2048 292863 145408 c W95 FAT32 (LBA)&lt;/span&gt;
+&lt;span class="err"&gt;/dev/sdg2 292864 3710975 1709056 83 Linux&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Images&lt;/h3&gt;
+&lt;p&gt;After the build completes there will be image in in ./bin/octeon directory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cp kernel  /media/venkat/0243-8F11/vmlinux&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Copy the kernel to the first partition&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cp kernel  /media/venkat/0243-8F11/vmlinux&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Extract rootfs to the second partition. Be very careful hre and choose the right drive and partition for of&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo dd if=./root of=/dev/sdg2 bs=1M&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Plugin in the USB and boot.&lt;/p&gt;</content><category term="NETWORKING"></category><category term="OpenWRT"></category><category term="Edge Router"></category></entry></feed>
