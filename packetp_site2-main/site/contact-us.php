@@ -206,7 +206,9 @@
                         <div class="col-md-6 col-lg-6 col-sm-12">
                             <div class="col-md-12">
                                 <div class="well well-sm">
-                                    <form class="" method="post" action="">
+                                    <form class="" method="post" 
+                                    action="">
+                                    @csrf 
                                         <fieldset>
                                             <legend class="text-xs-center header">Contact Us</legend>
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\CareersController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\job1Controller;
 use App\Http\Controllers\admin\Job2Controller;
+use App\Http\Controllers\admin\SubmittController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,10 @@ Route::get('/careers',[CareersController::class,'index'])->name('admin.careers')
 Route::get('/contact',[ContactController::class,'index'])->name('admin.Contact');
 Route::get('/job1',[Job1Controller::class,'index'])->name('admin.jobs');
 Route::get('/job2',[Job2Controller::class,'index'])->name('admin.jobs');
+// Route::post('/submitt',[SubmittController::class, 'store']);
+
+Route::post('/submitform', 'SubmittController@submit')->name('admin.submit');
+
 
 
 
