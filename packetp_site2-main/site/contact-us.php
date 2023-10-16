@@ -11,7 +11,8 @@
      $messag = $_POST['message'];
     $subject = "Form submission Data";
     $subject2 = "Copy of your form submission";
-    $message = "Name :- ".$name . "\n\nEmail :- " .$from."\n\nPhone Number :- ". $phone ."\n\nOrganization :- ".$organization. "\n\n wrote the following message :-" . $_POST['message'];
+    $message = "Name :- ".$name . "\n\nEmail :- " .$from."\n\nPhone Number :- ". $phone ."\n\nOrganization :- ".$organization. "\n\n wrote  
+    the following message :-" . $_POST['message'];
     $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
 
     $headers = "From:" . $from;
