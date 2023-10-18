@@ -36,8 +36,8 @@ Route::get('/careers',[CareersController::class,'index'])->name('admin.careers')
 Route::get('/contact',[ContactController::class,'index'])->name('admin.Contact');
 Route::get('/job1',[Job1Controller::class,'index'])->name('admin.jobs');
 Route::get('/job2',[Job2Controller::class,'index'])->name('admin.jobs');
-Route::get('/submit',[SubmittController::class,'index'])->name('admin.submit');
-Route::get('/submit',[SubmittController::class,'register'])->name('register');
+Route::post('/submit',[SubmittController::class,'index'])->name('admin.submit');
+Route::post('/submit',[SubmittController::class,'register'])->name('register');
 
 
 

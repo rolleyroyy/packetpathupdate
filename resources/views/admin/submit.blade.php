@@ -4,7 +4,7 @@
         <div class="col-md-6">
             <h1>Contact Us</h1>
 
-            <form method="post" action="{{ route('/submit') }}">
+            <form method="post" action="{{ url('/submit') }}">
                 @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
