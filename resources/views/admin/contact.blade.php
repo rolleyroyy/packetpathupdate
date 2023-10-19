@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
         <link rel="stylesheet" href="{{asset('css/smoothproducts.css')}}">
         <link rel="stylesheet" href="{{asset('css/intlTelInput.css')}}">
-        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <style>
@@ -101,6 +101,57 @@
             }
         </script>
         <script async defer src="{{asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyD-_sLF8m_7jm2mag6lLgAJW5ilaZp7f2o&callback=initMap')}}"></script>
+        <script>
+        $(document).ready(function () {
+    $("#contact-form").on("submit", function (event) {
+        
+        
+        event.preventDefault();
+
+        var form = $(this);
+        var formData = form.serialize();
+        var formMessages = $(".form-message");
+        var name = $("#fname").val();
+        var email = $("#email").val();
+        var phone = $("#demo").val();
+        var organization = $("#organiz").val();
+        var message = $("#message").val();
+
+        if (
+            name === "" ||
+            email === "" ||
+            phone === "" ||
+            organization === "" ||
+            message === ""
+        ) {
+            formMessages.removeClass("success").addClass("error");
+            formMessages.html("Please fill in all required fields.");
+        } else {
+            $.ajax(
+                {
+                type: "POST",
+                url: '{{url("/submit")}}',
+                data: formData,
+                success: function (response) {
+                    formMessages.removeClass("error").addClass("success");
+                    formMessages.html(response);
+                    form[0].reset();
+                },
+                error: function (data) {
+                    alert('errror');
+                    formMessages.removeClass("success").addClass("error");
+                    var messageHtml =
+                        data.responseText !== ""
+                            ? data.responseText
+                            : "Oops! An error occurred, and your message could not be sent.";
+                    formMessages.html(messageHtml);
+                },
+            });
+        }
+    });
+});
+</script>
+
 
     </head>
 
@@ -247,7 +298,7 @@
             </div>
         </footer>
 
-        <script src="{{asset('js/submit.js')}}"></script>
+        <!-- <script src="{{asset('js/submit.js')}}"></script> -->
         <script src="{{asset('js/jquery.min.js')}}"></script>
         <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js')}}"></script>
