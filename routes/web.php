@@ -11,6 +11,14 @@ use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\job1Controller;
 use App\Http\Controllers\admin\Job2Controller;
 use App\Http\Controllers\admin\SubmittController;
+use App\Http\Controllers\admin\BlogExample1Controller;
+use App\Http\Controllers\admin\BlogExampl2Controller;
+use App\Http\Controllers\admin\BlogExampl3Controller;
+use App\Http\Controllers\admin\BlogExampl4Controller;
+use App\Http\Controllers\admin\BlogExample5Controller;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +46,12 @@ Route::get('/job1',[Job1Controller::class,'index'])->name('admin.jobs');
 Route::get('/job2',[Job2Controller::class,'index'])->name('admin.jobs');
 Route::post('/submit',[SubmittController::class,'index'])->name('admin.submit');
 Route::post('/submit',[SubmittController::class,'register'])->name('register');
+Route::get('blogs/wifiexample',[BlogExample1Controller::class,'index'])->name('admin.wifiexample');
+Route::get('blogs/wiced',[BlogExampl2Controller::class,'index'])->name('admin.wiced');
+Route::get('blogs/wicedgettingstarted',[BlogExampl3Controller::class,'index'])->name('admin.wicedgettingstarted');
+Route::get('blogs/wicedmanagingrepos',[BlogExampl4Controller::class,'index'])->name('admin.wicedmanagingrepos');
+Route::get('blogs/wicedcommand',[BlogExample5Controller::class,'index'])->name('admin.wicedcommand');
+
 
 
 

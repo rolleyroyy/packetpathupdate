@@ -101,57 +101,6 @@
             }
         </script>
         <script async defer src="{{asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyD-_sLF8m_7jm2mag6lLgAJW5ilaZp7f2o&callback=initMap')}}"></script>
-        <script>
-        $(document).ready(function () {
-    $("#contact-form").on("submit", function (event) {
-        
-        
-        event.preventDefault();
-
-        var form = $(this);
-        var formData = form.serialize();
-        var formMessages = $(".form-message");
-        var name = $("#fname").val();
-        var email = $("#email").val();
-        var phone = $("#demo").val();
-        var organization = $("#organiz").val();
-        var message = $("#message").val();
-
-        if (
-            name === "" ||
-            email === "" ||
-            phone === "" ||
-            organization === "" ||
-            message === ""
-        ) {
-            formMessages.removeClass("success").addClass("error");
-            formMessages.html("Please fill in all required fields.");
-        } else {
-            $.ajax(
-                {
-                type: "POST",
-                url: '{{url("/submit")}}',
-                data: formData,
-                success: function (response) {
-                    formMessages.removeClass("error").addClass("success");
-                    formMessages.html(response);
-                    form[0].reset();
-                },
-                error: function (data) {
-                    alert('errror');
-                    formMessages.removeClass("success").addClass("error");
-                    var messageHtml =
-                        data.responseText !== ""
-                            ? data.responseText
-                            : "Oops! An error occurred, and your message could not be sent.";
-                    formMessages.html(messageHtml);
-                },
-            });
-        }
-    });
-});
-</script>
-
 
     </head>
 
@@ -234,50 +183,49 @@
                         <div class="col-md-6 col-lg-6 col-sm-12">
                             <div class="col-md-12">
                                 <div class="well well-sm">
-                                    <form ID="contact-form" method="POST"
-                                    action="{{url('/submit')}}">
-                                    @csrf 
+                                    <form id="contact-form">
+                                        @csrf
                                         <fieldset>
                                             <legend class="text-xs-center header">Contact Us</legend>
-
+                                
                                             <div class="form-group">
                                                 <span class="col-md-1 offset-md-2 text-xs-center"></span>
                                                 <div class="col-md-12">
                                                     <input id="fname" name="name" type="text" placeholder="Name" class="form-control" required>
                                                 </div>
                                             </div>
-
-
+                                
                                             <div class="form-group">
                                                 <span class="col-md-1 offset-md-2 text-xs-center"></span>
                                                 <div class="col-md-12">
                                                     <input id="email" name="email" type="email" placeholder="Email Address" class="form-control" required>
                                                 </div>
                                             </div>
-
+                                
                                             <div class="form-group">
                                                 <span class="col-md-1 offset-md-2 text-xs-center"></span>
                                                 <div class="col-md-12">
-                                                <input type="tel" id="demo"  class="form-control"  required="required" name="phone" placeholder="Phone Number"  > 
+                                                    <input type="tel" id="phone" class="form-control" required="required" name="phone" placeholder="Phone Number">
                                                 </div>
                                             </div>
+                                
                                             <div class="form-group">
                                                 <span class="col-md-1 offset-md-2 text-xs-center"></span>
                                                 <div class="col-md-12">
-                                                    <input id="organiz" name="organization" type="text" placeholder="Organization" class="form-control" required>
+                                                    <input id="organization" name="organization" type="text" placeholder="Organization" class="form-control" required>
                                                 </div>
                                             </div>
-
+                                
                                             <div class="form-group">
                                                 <span class="col-md-1 offset-md-2 text-xs-center"></span>
                                                 <div class="col-md-12">
                                                     <textarea class="form-control" id="message" name="message" placeholder="Enter your message." rows="7"></textarea>
                                                 </div>
                                             </div>
-
+                                
                                             <div class="form-group">
                                                 <div class="col-md-12 text-xs-center">
-                                                    <button type="submit" Id="#save"  class="btn btn-primary btn-lg">Submit</button>
+                                                    <button type="button" id="save" class="btn btn-primary btn-lg">Submit</button>
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -299,15 +247,87 @@
         </footer>
 
         <!-- <script src="{{asset('js/submit.js')}}"></script> -->
-        <script src="{{asset('js/jquery.min.js')}}"></script>
+        <!--<script src="{{asset('js/jquery.min.js')}}"></script>-->
         <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js')}}"></script>
         <script src="{{asset('js/smoothproducts.min.js')}}"></script>
         <script src="{{asset('js/theme.js')}}"></script>
         <script src="{{asset('js/Client-Slider-1.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
  
+        <script>
+        $(document).ready(function () {
+
+            // Handle form submission
+            $('#save').click(function() {
+                // Clear previous error messages
+                $('.error').remove();
+    
+                // Get form data
+                var formData = {
+                    name: $('#fname').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val(),
+                    organization: $('#organization').val(),
+                    message: $('#message').val()
+                };
+    
+                // Validate the form data
+                var isValid = true;
+    
+                if (formData.name.trim() === '') {
+                    isValid = false;
+                    $('#fname').after('<span class="error">Please enter your name</span>');
+                }
+    
+                if (formData.email.trim() === '') {
+                    isValid = false;
+                    $('#email').after('<span class="error">Please enter your email</span>');
+                }
+    
+                if (formData.phone.trim() === '') {
+                    isValid = false;
+                    $('#phone').after('<span class="error">Please enter your phone number</span>');
+                }
+    
+                if (formData.organization.trim() === '') {
+                    isValid = false;
+                    $('#organization').after('<span class="error">Please enter your organization</span>');
+                }
+    
+                if (formData.message.trim() === '') {
+                    isValid = false;
+                    $('#message').after('<span class="error">Please enter your message</span>');
+                }
+    
+                if (!isValid) {
+                    return;
+                }
+    
+                // Send the data to the API
+                $.ajax({
+                    url: 'https://nssmu.org.in/processform.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'JSON',
+                    success: function(response) {
+                        alert(response.message);
+                        // $('#message').after("sdfsdfsdf" + formData);
+                        console.log(formData);
+                    },
+                    error: function(xhr, status, error) {
+                        alert('An error occurred. Please try again.');
+                        alert(formData);
+                        // $('#message').after(formData);
+
+                    }
+                });
+            });
+            
+        });
+</script>
+
     </body>
 
     </html>

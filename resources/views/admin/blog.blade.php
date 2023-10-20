@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <!-- Custom Style -->
-    <link rel="stylesheet" href="http://packetp.com/blog/theme/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
    
     <!-- Favicon -->
     <!-- <link rel="icon" href="http://packetp.com/blog/favicon.ico"> -->
@@ -59,12 +59,12 @@
         style="padding-top: 0px; margin-bottom: 0px;">
         <div class="container" style="padding-top: 0px; margin-bottom: -12px;">
             <a class="navbar-brand logo" href="http://packetp.com/blog/index.html"><img
-                    src="http://packetp.com/blog/theme/assets/img/logo.png"></a><button class="navbar-toggler"
+                    src="{{asset('img/logo.png')}}"></a><button class="navbar-toggler"
                 data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link " href="http://packetp.com/index.html" style="color: #201D52;"><strong>Home</strong></a></li> -->
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="http://packetp.com/index.html" style="color: #201D52;"><strong>Home</strong></a></li>
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link active " href="http://packetp.com/blog/aboutus.html"><strong>ABOUT Us</strong> </a></li> -->
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link " href="http://packetp.com/blog/service-page.html" style="color: #201D52;"><strong>SERVICES</strong></a></li> -->
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="https://blog.packetp.com/" style="color: #201D52;"><strong>BLOG</strong></a></li> -->
@@ -82,7 +82,7 @@
     </nav>
 
 
-    <!-- <div class="pos-f-t">
+    <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
                     <ul class="navbar-nav">
@@ -106,18 +106,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
-        </div> -->
+        </div>
 
     <!-- Begin page content -->
         <section class="container mt-4 mb-4 p-4">
 
             <article>
                 <h1 class="d-none d-md-block">
-                    <a href="http://packetp.com/blog/running-wifi-example-on-cy8cproto_062_4343w.html" rel="bookmark" title="Permalink to Running WiFi example on CY8CPROTO_062_4343W" style="word-break: break-all;">
+                    <a href="http" rel="bookmark" title="Permalink to Running WiFi example on CY8CPROTO_062_4343W" style="word-break: break-all;">
+                    <a href="http" rel="bookmark" title="Permalink to Running WiFi example on CY8CPROTO_062_4343W" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wifiexample')}}" rel="bookmark" title="Permalink to Running WiFi example on CY8CPROTO_062_4343W" style="word-break: break-all;">
                     Running WiFi example on CY8CPROTO_062_4343W</a>
                 </h1>
                 <h1 class="h3 d-md-none">
-                    <a href="http://packetp.com/blog/running-wifi-example-on-cy8cproto_062_4343w.html" rel="bookmark" title="Permalink to Running WiFi example on CY8CPROTO_062_4343W" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wifiexample')}}" rel="bookmark" title="Permalink to Running WiFi example on CY8CPROTO_062_4343W" style="word-break: break-all;">
                     Running WiFi example on CY8CPROTO_062_4343W</a>
                 </h1>
                     By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
@@ -125,7 +127,7 @@
                 
             </article>
             <div class="mx-auto">
-                <a href="http://packetp.com/blog/running-wifi-example-on-cy8cproto_062_4343w.html">
+                <a href="{{asset('blogs/wifiexample')}}">
                     <button class="btn btn-info">
                         View Article
                     </button>
@@ -136,11 +138,11 @@
 
             <article>
                 <h1 class="d-none d-md-block">
-                    <a href="http://packetp.com/blog/wiced-using-command-line-gdb.html" rel="bookmark" title="Permalink to WICED : Using command line gdb" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wicedcommand')}}" rel="bookmark" title="Permalink to WICED : Using command line gdb" style="word-break: break-all;">
                     WICED : Using command line gdb</a>
                 </h1>
                 <h1 class="h3 d-md-none">
-                    <a href="http://packetp.com/blog/wiced-using-command-line-gdb.html" rel="bookmark" title="Permalink to WICED : Using command line gdb" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wicedcommand')}}" rel="bookmark" title="Permalink to WICED : Using command line gdb" style="word-break: break-all;">
                     WICED : Using command line gdb</a>
                 </h1>
                     By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
@@ -159,7 +161,7 @@
                 
             </article>
             <div class="mx-auto">
-                <a href="http://packetp.com/blog/wiced-using-command-line-gdb.html">
+                <a href="{{asset('blogs/wicedcommand')}}">
                     <button class="btn btn-info">
                         View Article
                     </button>
@@ -170,11 +172,11 @@
 
             <article>
                 <h1 class="d-none d-md-block">
-                    <a href="http://packetp.com/blog/steps-to-compile-and-run-openwrt-on-edge-router.html" rel="bookmark" title="Permalink to Steps to compile and run OpenWRT on Edge Router" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wiced')}}" rel="bookmark" title="Permalink to Steps to compile and run OpenWRT on Edge Router" style="word-break: break-all;">
                     Steps to compile and run OpenWRT on Edge Router</a>
                 </h1>
                 <h1 class="h3 d-md-none">
-                    <a href="http://packetp.com/blog/steps-to-compile-and-run-openwrt-on-edge-router.html" rel="bookmark" title="Permalink to Steps to compile and run OpenWRT on Edge Router" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wiced')}}" rel="bookmark" title="Permalink to Steps to compile and run OpenWRT on Edge Router" style="word-break: break-all;">
                     Steps to compile and run OpenWRT on Edge Router</a>
                 </h1>
                     By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
@@ -183,7 +185,7 @@
                 
             </article>
             <div class="mx-auto">
-                <a href="http://packetp.com/blog/steps-to-compile-and-run-openwrt-on-edge-router.html">
+                <a href="{{asset('blogs/wiced')}}">
                     <button class="btn btn-info">
                         View Article
                     </button>
@@ -194,14 +196,14 @@
 
             <article>
                 <h1 class="d-none d-md-block">
-                    <a href="http://packetp.com/blog/wiced-managing-repos.html" rel="bookmark" title="Permalink to WICED : Managing repos" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wicedmanagingrepos')}}" rel="bookmark" title="Permalink to WICED : Managing repos" style="word-break: break-all;">
                     WICED : Managing repos</a>
                 </h1>
                 <h1 class="h3 d-md-none">
-                    <a href="http://packetp.com/blog/wiced-managing-repos.html" rel="bookmark" title="Permalink to WICED : Managing repos" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wicedmanagingrepos')}}" rel="bookmark" title="Permalink to WICED : Managing repos" style="word-break: break-all;">
                     WICED : Managing repos</a>
                 </h1>
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: <a href="{{asset('blogs/wicedmanagingrepos')}}">Venkat Subbiah</a><br />
                 <p>You have evaluated WICED and getting ready to build your own product with WICED. As you are developing code, you will possibly be developing these additional components</p>
 <ul>
 <li>libraries</li>
@@ -212,7 +214,7 @@
                 
             </article>
             <div class="mx-auto">
-                <a href="http://packetp.com/blog/wiced-managing-repos.html">
+                <a href="{{asset('blogs/wicedmanagingrepos')}}">
                     <button class="btn btn-info">
                         View Article
                     </button>
@@ -223,11 +225,11 @@
 
             <article>
                 <h1 class="d-none d-md-block">
-                    <a href="http://packetp.com/blog/wiced-getting-started.html" rel="bookmark" title="Permalink to WICED getting started" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wicedgettingstarted')}}" rel="bookmark" title="Permalink to WICED getting started" style="word-break: break-all;">
                     WICED getting started</a>
                 </h1>
                 <h1 class="h3 d-md-none">
-                    <a href="http://packetp.com/blog/wiced-getting-started.html" rel="bookmark" title="Permalink to WICED getting started" style="word-break: break-all;">
+                    <a href="{{asset('blogs/wicedgettingstarted')}}" rel="bookmark" title="Permalink to WICED getting started" style="word-break: break-all;">
                     WICED getting started</a>
                 </h1>
                     By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
@@ -238,7 +240,7 @@
                 
             </article>
             <div class="mx-auto">
-                <a href="http://packetp.com/blog/wiced-getting-started.html">
+                <a href="{{asset('blogs/wicedgettingstarted')}}">
                     <button class="btn btn-info">
                         View Article
                     </button>
@@ -270,11 +272,11 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
 
-    <!-- Google Analytics/Disqus scripts -->
+    <!-- Google Analytics/Disqus scripts
 </body>
 
 </html>
