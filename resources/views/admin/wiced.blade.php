@@ -19,10 +19,11 @@
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="http://packetp.com/blog/theme/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
    
     <!-- Favicon -->
-    <!-- <link rel="icon" href="http://packetp.com/blog/favicon.ico"> -->
-    <!-- <link rel='icon' href='http://packetp.com/blog/static/assets/img/favicon.ico' type='image/x-icon' /> -->
+    <link rel="icon" href="http://packetp.com/blog/favicon.ico"> 
+    <link rel='icon' href='http://packetp.com/blog/static/assets/img/favicon.ico' type='image/x-icon' />
 
     <!-- RSS Feed -->
 
@@ -80,7 +81,8 @@
             </div>
         </div>
     </nav>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
     <!-- <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
@@ -125,13 +127,13 @@
     
     <div class="card border-0 card-body">
         <p class="card-text text-wrap" style="word-break: break-all;">
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 Published: 02 Jan 2019<br />
-                Category: <a href="http://packetp.com/blog/category/networking.html">NETWORKING</a><br />
+                Category: NETWORKING</a><br />
                 Tags:
  
-                        <a href="http://packetp.com/blog/tag/openwrt.html">OpenWRT</a>, 
-                        <a href="http://packetp.com/blog/tag/edge-router.html">Edge Router</a><br />
+                        OpenWRT</a>, 
+                        Edge Router</a><br />
         </p>
     </div>
 
@@ -191,7 +193,7 @@
     <ul class="d-flex  pl-0 ">
 
         
-            <a href="" class="text-decoration-none w-50 pr-2 justify-content-start">
+            <a href="{{asset('blogs/wicedmanagingrepos')}}" class="text-decoration-none w-50 pr-2 justify-content-start">
             <a href="{{asset('blogs/wicedmanagingrepos')}}" class="text-decoration-none w-50 pr-2 justify-content-start">
              << WICED : Managing repos
             </a>
@@ -228,9 +230,9 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Google Analytics/Disqus scripts -->
 </body>

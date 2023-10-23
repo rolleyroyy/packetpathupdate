@@ -19,6 +19,12 @@
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="http://packetp.com/blog/theme/assets/bootstrap/css/bootstrap.min.css">
+     <!-- Custom Style -->
+     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
+   
+
    
     <!-- Favicon -->
     <!-- <link rel="icon" href="http://packetp.com/blog/favicon.ico"> -->
@@ -80,6 +86,8 @@
             </div>
         </div>
     </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
 
     <!-- <div class="pos-f-t">
@@ -125,17 +133,17 @@
     
     <div class="card border-0 card-body">
         <p class="card-text text-wrap" style="word-break: break-all;">
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 Published: 19 May 2019<br />
-                Category: <a href="http://packetp.com/blog/category/iot.html">IOT</a><br />
+                Category:IOT</a><br />
                 Tags:
  
-                        <a href="http://packetp.com/blog/tag/iot.html">IOT</a>, 
+                        IOT</a>, 
  
-                        <a href="http://packetp.com/blog/tag/wiced.html">WICED</a>, 
+                        WICED</a>, 
  
-                        <a href="http://packetp.com/blog/tag/networking.html">NETWORKING</a>, 
-                        <a href="http://packetp.com/blog/tag/cy8cproto_062_4343w.html">CY8CPROTO_062_4343W</a><br />
+                        NETWORKING</a>, 
+                        CY8CPROTO_062_4343W</a><br />
         </p>
     </div>
 
@@ -159,7 +167,7 @@ https://github.com/cypresssemiconductorco/Firmware-loader/releases</p>
 
 
 <p>Configure the SSID and password used to connect, by editing mbed_app.json</p>
-<div class="highlight"><pre><span></span><code><span class="err">drwxr-xr-x   7 venkat  admin   238 Nov  9  2018 wifi-ism43362</span>
+<div class="highlight"><pre><span></span><code><span class="err"><pre><code class = "html"><strong>drwxr-xr-x   7 venkat  admin   238 Nov  9  2018 wifi-ism43362</span>
 <span class="err"> (embed) VsMac2: ~/work/pp/pp_dev/mbed/snips/mbed-os-example-wifi : cat mbed_app.json </span>
 <span class="err"> {</span>
 <span class="err">     &quot;config&quot;: {</span>

@@ -21,8 +21,9 @@
     <link rel="stylesheet" href="http://packetp.com/blog/theme/assets/bootstrap/css/bootstrap.min.css">
    
     <!-- Favicon -->
-    <!-- <link rel="icon" href="http://packetp.com/blog/favicon.ico"> -->
-    <!-- <link rel='icon' href='http://packetp.com/blog/static/assets/img/favicon.ico' type='image/x-icon' /> -->
+    <link rel="icon" href="http://packetp.com/blog/favicon.ico"> -->
+     <link rel='icon' href='http://packetp.com/blog/static/assets/img/favicon.ico' type='image/x-icon' />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
 
     <!-- RSS Feed -->
 
@@ -80,6 +81,9 @@
             </div>
         </div>
     </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
 
 
     <!-- <div class="pos-f-t">
@@ -125,11 +129,11 @@
     
     <div class="card border-0 card-body">
         <p class="card-text text-wrap" style="word-break: break-all;">
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 Published: 02 Jan 2019<br />
-                Category: <a href="http://packetp.com/blog/category/iot.html">IOT</a><br />
+                Category: IOT</a><br />
                 Tags:
-                        <a href="http://packetp.com/blog/tag/wiced.html">WICED</a><br />
+                        WICED</a><br />
         </p>
     </div>
 

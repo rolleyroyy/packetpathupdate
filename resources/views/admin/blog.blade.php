@@ -6,8 +6,8 @@
     <title>Packet Path Blog - </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+      
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="http://packetp.com/blog/theme/assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="http://packetp.com/blog/theme/assets/fonts/simple-line-icons.min.css">
@@ -19,10 +19,12 @@
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
    
-    <!-- Favicon -->
-    <!-- <link rel="icon" href="http://packetp.com/blog/favicon.ico"> -->
-    <!-- <link rel='icon' href='http://packetp.com/blog/static/assets/img/favicon.ico' type='image/x-icon' /> -->
+    
+    <link rel="icon" href="http://packetp.com/blog/favicon.ico">
+    <link rel='icon' href='http://packetp.com/blog/static/assets/img/favicon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
 
     <!-- RSS Feed -->
 
@@ -58,13 +60,13 @@
     <nav class="navbar navbar-light navbar-expand-lg position-sticky fixed-top bg-white clean-navbar"
         style="padding-top: 0px; margin-bottom: 0px;">
         <div class="container" style="padding-top: 0px; margin-bottom: -12px;">
-            <a class="navbar-brand logo" href="http://packetp.com/blog/index.html"><img
+            <a class="navbar-brand logo" href="{{asset('blogs')}}"><img
                     src="{{asset('img/logo.png')}}"></a><button class="navbar-toggler"
                 data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link " href="http://packetp.com/index.html" style="color: #201D52;"><strong>Home</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="{{asset('/')}}" style="color: #201D52;"><strong>Home</strong></a></li>
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link active " href="http://packetp.com/blog/aboutus.html"><strong>ABOUT Us</strong> </a></li> -->
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link " href="http://packetp.com/blog/service-page.html" style="color: #201D52;"><strong>SERVICES</strong></a></li> -->
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="https://blog.packetp.com/" style="color: #201D52;"><strong>BLOG</strong></a></li> -->
@@ -81,8 +83,11 @@
         </div>
     </nav>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
-    <div class="pos-f-t">
+
+    <!-- <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
                     <ul class="navbar-nav">
@@ -106,7 +111,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
-        </div>
+        </div> -->
 
     <!-- Begin page content -->
         <section class="container mt-4 mb-4 p-4">
@@ -122,7 +127,7 @@
                     <a href="{{asset('blogs/wifiexample')}}" rel="bookmark" title="Permalink to Running WiFi example on CY8CPROTO_062_4343W" style="word-break: break-all;">
                     Running WiFi example on CY8CPROTO_062_4343W</a>
                 </h1>
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 <p>At Packet Path we have worked on several projects using Cypress WiFi/BT chips. One of the popular chip is 4343W. I am excited that a driver for 4343W is available in mbed. 4343W is the chip that’s on the CY8CPROTO_062_4343W kit. Below are instructions to try out the …</p>
                 
             </article>
@@ -145,7 +150,7 @@
                     <a href="{{asset('blogs/wicedcommand')}}" rel="bookmark" title="Permalink to WICED : Using command line gdb" style="word-break: break-all;">
                     WICED : Using command line gdb</a>
                 </h1>
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 <h3>Launch openocd in one console</h3>
 <div class="highlight"><pre><span></span><code><span class="err">&quot;./tools/OpenOCD/OSX/openocd-all-brcm-libftdi&quot; -s &quot;./tools/OpenOCD/scripts&quot; -f ./tools/OpenOCD/CYW9WCD1EVAL1.cfg -f ./tools/OpenOCD/stm32f4x.cfg -f ./tools/OpenOCD/stm32f4x-flash-app.cfg</span>
 </code></pre></div>
@@ -179,7 +184,7 @@
                     <a href="{{asset('blogs/wiced')}}" rel="bookmark" title="Permalink to Steps to compile and run OpenWRT on Edge Router" style="word-break: break-all;">
                     Steps to compile and run OpenWRT on Edge Router</a>
                 </h1>
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 <h3>Open to access USB drive</h3>
 <p>Need to open up the Edge Router to access the USB drive. It needs to be . Below is picture after opening it up. Be careful when unplugging the USB drive. Hold on to the USB connector, so that there is not much pull on the …</p>
                 
@@ -203,7 +208,7 @@
                     <a href="{{asset('blogs/wicedmanagingrepos')}}" rel="bookmark" title="Permalink to WICED : Managing repos" style="word-break: break-all;">
                     WICED : Managing repos</a>
                 </h1>
-                    By: <a href="{{asset('blogs/wicedmanagingrepos')}}">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 <p>You have evaluated WICED and getting ready to build your own product with WICED. As you are developing code, you will possibly be developing these additional components</p>
 <ul>
 <li>libraries</li>
@@ -232,7 +237,7 @@
                     <a href="{{asset('blogs/wicedgettingstarted')}}" rel="bookmark" title="Permalink to WICED getting started" style="word-break: break-all;">
                     WICED getting started</a>
                 </h1>
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By:Venkat Subbiah</a><br />
                 <h3>What is WICED</h3>
 <p>WICED stands for Wireless Internet Connectivity for Embedded Devices. It is a development system(IDE, SDK) that is used to develop software for Cypress(Formerly Broadcom IoT) based WiFi/Bluetooth devices that are paired  with a microcontroller.</p>
 <h3>WICED Install</h3>

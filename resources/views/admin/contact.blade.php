@@ -106,22 +106,23 @@
 
     <body>
         
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="padding-top: 0px; margin-bottom: 0px;">
-            <div class="container" style="padding-top: 0px; margin-bottom: -12px;">
-                <a class="navbar-brand logo" href="index.html"><img src="{{asset('img/logo.png')}}"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link " href="index.html" style="color: #201D52;"><strong>Home</strong></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link " href="aboutus.html" style="color: #201D52;"><strong>ABOUT Us</strong> </a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link " href="products.html" style="color: #201D52;"><strong>Products</strong></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link " href="service-page.html" style="color: #201D52;"><strong>SERVICES</strong></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="./blog/index.html" style="color: #201D52;"><strong>BLOG</strong></a></li>
-                             <li class="nav-item" role="presentation"><a class="nav-link" href="career.html" style="color: #201D52;"><strong>Careers</strong> </a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="contact-us.php"><strong>CONTACT US</strong> </a></li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="padding-top: 0px; margin-bottom: 0px;">
+        <div class="container" style="padding-top: 0px; margin-bottom: -12px;">
+            <a class="navbar-brand logo" href=href="{{asset('admin/about')}}"><img src="{{asset('img/logo.png')}}"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{{asset('/')}}"><strong>Home</strong></a></li>
+                   
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="{{asset('/about')}}" style="color: #201D52;"><strong>ABOUT Us</strong> </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="{{asset('/products')}}" style="color: #201D52;"><strong>Products</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/services')}}" style="color: #201D52;"><strong>SERVICES</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/blogs')}}" style="color: #201D52;"><strong>BLOG</strong></a></li>
+                         <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/careers')}}" style="color: #201D52;"><strong>Careers</strong> </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/contact')}}" style="color: #201D52;"><strong>Contact Us</strong> </a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
         <main class="page Contact-page dark">
 
             <section class="clean-block clean-form dark" style="text-align: center; margin-bottom: 50px;">

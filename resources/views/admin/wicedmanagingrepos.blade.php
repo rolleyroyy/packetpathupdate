@@ -19,6 +19,7 @@
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
    
     <!-- Favicon -->
     <!-- <link rel="icon" href="http://packetp.com/blog/favicon.ico"> -->
@@ -80,6 +81,8 @@
             </div>
         </div>
     </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
 
     <!-- <div class="pos-f-t">
@@ -125,13 +128,13 @@
     
     <div class="card border-0 card-body">
         <p class="card-text text-wrap" style="word-break: break-all;">
-                    By: <a href="http://packetp.com/blog/author/venkat-subbiah.html">Venkat Subbiah</a><br />
+                    By: Venkat Subbiah</a><br />
                 Published: 26 Dec 2018<br />
-                Category: <a href="http://packetp.com/blog/category/iot.html">IOT</a><br />
+                Category: IOT</a><br />
                 Tags:
  
-                        <a href="http://packetp.com/blog/tag/iot.html">IOT</a>, 
-                        <a href="http://packetp.com/blog/tag/wiced.html">WICED</a><br />
+                        IOT</a>, 
+                       WICED</a><br />
         </p>
     </div>
 
@@ -181,12 +184,12 @@
     <ul class="d-flex  pl-0 ">
 
         
-            <a href="" class="text-decoration-none w-50 pr-2 justify-content-start">
+            <a href="{{asset('blogs/wicedgettingstarted')}}" class="text-decoration-none w-50 pr-2 justify-content-start">
              << WICED getting started
             </a>
         
         
-            <a href="http://packetp.com/blog/steps-to-compile-and-run-openwrt-on-edge-router.html" class="text-decoration-none w-50 pl-2 justify-content-end">
+            <a href="{{asset('blogs/wiced')}}" class="text-decoration-none w-50 pl-2 justify-content-end">
              Steps to compile and run OpenWRT on Edge Router >>
             </a>
               
