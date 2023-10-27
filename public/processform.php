@@ -1,44 +1,38 @@
 <?php
+// Collect POST variables
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$organization = $_POST['organization'];
+$message = $_POST['message'];
 
-error_reporting(0);
+// Process email
+$to = 'allan@breeur.com';
+$subject = 'New Contact Form Submission from PacketP Website';
+$body = "Name: $name\n";
+$body .= "Email: $email\n";
+$body .= "Phone: $phone\n";
+$body .= "Organization: $organization\n";
+$body .= "Message: $message";
 
-// Retrieve the POST data
-$formData = $_POST['data'];
-
-// Retrieve the form fields from the formData array
-$name = $formData['name'];
-$email = $formData['email'];
-$phone = $formData['phone'];
-$organization = $formData['organization'];
-$message = $formData['message'];
-
-// Perform any necessary validation or processing here
-
+$headers = "From: noreply@packetp.com\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
 // Send email
-$to = 'allan@breeur.com';
-$subject = 'New Form Submission';
-$body = "Name: $name\nEmail: $email\nPhone: $phone\nOrganization: $organization\nMessage: $message";
+$mailSent = mail($to, $subject, $body, $headers);
 
-// Additional headers
-$headers = "From: $to" . "\r\n";
-$headers .= "Reply-To: $to" . "\r\n";
+// Prepare response
+$response = array();
 
-// Send the email
-// mail($to, $subject, $body, $headers);
+if ($mailSent) {
+    $response['status'] = 'success';
+    $response['message'] = '<span style="color: blue;">Thank you for your message!</span>';
+} else {
+    $response['status'] = 'error';
+    $response['message'] = 'An error occurred while sending the email.';
+}
 
-// Generate the response message
-$responseMessage = "Thank you for submitting the form, $name!";
-
-// Prepare the JSON response
-$response = [
-    'message' => $name
-];
-
-// Set the response headers
+// Send response as JSON
 header('Content-Type: application/json');
-
-// Send the JSON response
 echo json_encode($response);
-
-?>

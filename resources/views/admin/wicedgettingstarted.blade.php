@@ -121,10 +121,6 @@
         
         WICED getting started
     </h1>
-    <h1 class="h3 text-break d-md-none">
-        
-        WICED getting started
-    </h1>
     
     <div class="card border-0 card-body">
         <p class="card-text text-wrap" style="word-break: break-all;">

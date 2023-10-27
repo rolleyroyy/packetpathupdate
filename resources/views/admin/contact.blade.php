@@ -106,23 +106,22 @@
 
     <body>
         
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="padding-top: 0px; margin-bottom: 0px;">
-        <div class="container" style="padding-top: 0px; margin-bottom: -12px;">
-            <a class="navbar-brand logo" href=href="{{asset('admin/about')}}"><img src="{{asset('img/logo.png')}}"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{{asset('/')}}"><strong>Home</strong></a></li>
-                   
-                    <li class="nav-item" role="presentation"><a class="nav-link " href="{{asset('/about')}}" style="color: #201D52;"><strong>ABOUT Us</strong> </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link " href="{{asset('/products')}}" style="color: #201D52;"><strong>Products</strong></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/services')}}" style="color: #201D52;"><strong>SERVICES</strong></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/blogs')}}" style="color: #201D52;"><strong>BLOG</strong></a></li>
-                         <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/careers')}}" style="color: #201D52;"><strong>Careers</strong> </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{asset('/contact')}}" style="color: #201D52;"><strong>Contact Us</strong> </a></li>
-                </ul>
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="padding-top: 0px; margin-bottom: 0px;">
+            <div class="container" style="padding-top: 0px; margin-bottom: -12px;">
+                <a class="navbar-brand logo" href="index.html"><img src="{{asset('img/logo.png')}}"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link " href="index.html" style="color: #201D52;"><strong>Home</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link " href="aboutus.html" style="color: #201D52;"><strong>ABOUT Us</strong> </a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link " href="products.html" style="color: #201D52;"><strong>Products</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link " href="service-page.html" style="color: #201D52;"><strong>SERVICES</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="./blog/index.html" style="color: #201D52;"><strong>BLOG</strong></a></li>
+                             <li class="nav-item" role="presentation"><a class="nav-link" href="career.html" style="color: #201D52;"><strong>Careers</strong> </a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="contact-us.php"><strong>CONTACT US</strong> </a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
         <main class="page Contact-page dark">
 
             <section class="clean-block clean-form dark" style="text-align: center; margin-bottom: 50px;">
@@ -226,6 +225,9 @@
                                 
                                             <div class="form-group">
                                                 <div class="col-md-12 text-xs-center">
+                                                    <span id="responsemessage"></span>
+                                                </div>
+                                                <div class="col-md-12 text-xs-center">
                                                     <button type="button" id="save" class="btn btn-primary btn-lg">Submit</button>
                                                 </div>
                                             </div>
@@ -275,32 +277,41 @@
                 };
     
                 // Validate the form data
-                var isValid = true;
-    
-                if (formData.name.trim() === '') {
-                    isValid = false;
-                    $('#fname').after('<span class="error">Please enter your name</span>');
-                }
-    
-                if (formData.email.trim() === '') {
-                    isValid = false;
-                    $('#email').after('<span class="error">Please enter your email</span>');
-                }
-    
-                if (formData.phone.trim() === '') {
-                    isValid = false;
-                    $('#phone').after('<span class="error">Please enter your phone number</span>');
-                }
-    
-                if (formData.organization.trim() === '') {
-                    isValid = false;
-                    $('#organization').after('<span class="error">Please enter your organization</span>');
-                }
-    
-                if (formData.message.trim() === '') {
-                    isValid = false;
-                    $('#message').after('<span class="error">Please enter your message</span>');
-                }
+                var formData = {
+    name: $('#fname').val(),
+    email: $('#email').val(),
+    phone: $('#phone').val(),
+    organization: $('#organization').val(),
+    message: $('#message').val()
+};
+
+// Validate the form data
+var isValid = true;
+
+if (formData.name.trim() === '') {
+    isValid = false;
+    $('#fname').after('<span style="color: red;">Please enter your name</span>');
+}
+
+if (formData.email.trim() === '') {
+    isValid = false;
+    $('#email').after('<span style="color: red;">Please enter your email</span>');
+}
+
+if (formData.phone.trim() === '') {
+    isValid = false;
+    $('#phone').after('<span style="color: red;">Please enter your phone number</span>');
+}
+
+if (formData.organization.trim() === '') {
+    isValid = false;
+    $('#organization').after('<span style="color: red;">Please enter your organization</span>');
+}
+
+if (formData.message.trim() === '') {
+    isValid = false;
+    $('#message').after('<span style="color: red;">Please enter your message</span>');
+}
     
                 if (!isValid) {
                     return;
@@ -313,13 +324,19 @@
                     data: formData,
                     dataType: 'JSON',
                     success: function(response) {
-                        alert(response.message);
-                        // $('#message').after("sdfsdfsdf" + formData);
-                        console.log(formData);
+                        // alert(response.message);
+                        $('#responsemessage').html(response.message);
+                        
+                        $('#fname').val("");
+                        $('#email').val(""),
+                        $('#phone').val(""),
+                        $('#organization').val(""),
+                        $('#message').val("");
+                        // console.log(formData);
                     },
                     error: function(xhr, status, error) {
-                        alert('An error occurred. Please try again.');
-                        alert(formData);
+                        // alert('An error occurred. Please try again.');
+                        // alert(formData);
                         // $('#message').after(formData);
 
                     }

@@ -16,9 +16,9 @@ class ContactMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($details)
     {
-        //
+        $this->details = $details;
     }
 
     /**
@@ -32,6 +32,18 @@ class ContactMail extends Mailable
     }
 
     /**
+     * Build the message
+     * 
+     * @return $this
+     */
+
+    public function build()
+    {
+        return $this ->subject('Contact Message')->view('emails.ContactMail');
+    }
+
+
+    /**
      * Get the message content definition.
      */
     public function content(): Content
@@ -40,6 +52,9 @@ class ContactMail extends Mailable
             view: 'view.name',
         );
     }
+
+
+
 
     /**
      * Get the attachments for the message.
