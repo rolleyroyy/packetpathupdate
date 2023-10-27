@@ -49,6 +49,59 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
 - **[Lendio](https://lendio.com)**
 
+Steps of how to make a page using laravel 
+1. Create a Controller
+In Laravel, you can create a controller using the
+make : controller Artisan command. For example, to create a
+controller named PostContr011er, you would navigate to
+your project directory in the terminal and run:
+bash
+php artisan make : controller Postcontroller
+This command will create a new controller file at
+app/Http/Controllers/PostController.php.
+
+2. Defining Methods in Controller
+Inside your controller, you can define methods that correspond
+to various actions your application can perform. For example,
+to display a list of posts, you might define a index method:
+php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+class Postcontroller extends Controller
+{
+    public function index()
+    {
+        return view('posts. index')
+    }
+}
+
+3. Create a Blade File
+Laravel uses the Blade templating engine for its views.In this
+example, the index method is returning a view named
+posts. index. This corresponds to a Blade file at
+resources/views/posts/index. blade. php. You would
+create this file and define your HTML markup there.
+
+4. Setting Up the Route
+Finally, you would define a route in your routes file that points
+to the index action of your PostContr011er. The routes file
+will be at routes/web. php. Here's an example of what the
+route might look like:
+php
+use Illuminate\Support\Facades\Route;
+use App\Http\Contr011ers\PostContr011er;
+
+
+Route: ' /posts• , [Postcontroller: :class,
+index' ] ) ;
+
+
+In this route definition, when a GET request is made to the
+/posts URL of your application, Laravel will direct that request
+to the index method of PostContr011er.
+
+That's the basic process of setting up a route in Laravel!. Remember to run php artisan serve to start your local development server and see your routes in action.
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
